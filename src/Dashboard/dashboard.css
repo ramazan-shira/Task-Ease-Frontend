@@ -1,0 +1,840 @@
+.dashboard {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: #efefe7;
+  width: 100%;
+  height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 70px;
+}
+
+.dashboard-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 70px;
+}
+
+.calendar-container {
+  height: 350px;
+  width: 550px;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.calendar-week {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  padding-inline-start: 0px;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.calendar-week-day {
+  max-width: 40px;
+  width: 100%;
+  text-align: center;
+  color: #525659;
+  font-size: 18px;
+}
+
+.calendar-days {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  padding-inline-start: 0px;
+  margin: 0;
+}
+
+.calendar-day {
+  text-align: center;
+  color: #525659;
+  font-size: 18px;
+}
+
+.calendar-month-arrow-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-actual-date {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.calendar-month-year-container {
+  padding: 5px;
+  color: #525659;
+  cursor: pointer;
+}
+
+.calendar-month-year-container select {
+  font-size: 18px;
+}
+
+.calendar-month-year {
+  font-size: 18px;
+}
+
+.calendar-arrow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.calendar-left-arrow,
+.calendar-right-arrow {
+  height: 25px;
+  width: 25px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #525659;
+  font-size: 18px;
+}
+
+.calendar-today-button {
+  margin-top: -10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  padding: 5px 8px;
+  background-color: #ec7625;
+  font-size: 18px;
+}
+
+.calendar-months,
+.calendar-years {
+  flex: 1;
+  border-radius: 10px;
+  height: 25px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  color: #525659;
+  font-size: 18px;
+}
+
+.calendar-day-active {
+  background-color: #ec7625;
+  color: white;
+  padding: 2px 0;
+}
+
+.pie-chart-container {
+  width: max-content;
+  height: 310px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.pie-chart-container p {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1d3557;
+}
+
+.pie-chart-container canvas {
+  width: 200px !important;
+  height: 200px !important;
+}
+
+.teams,
+.message {
+  box-sizing: border-box;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.teams {
+  padding: 30px 40px;
+  height: 310px;
+}
+
+.teams-list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.team {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 20px;
+  gap: 16px;
+  margin-left: 20px;
+}
+
+.team i {
+  font-size: 18px;
+  color: black;
+}
+
+.message {
+  height: 350px;
+}
+
+.message-title,
+.teams-title,
+.tasks-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.message-users {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  column-gap: 50px;
+  justify-items: start;
+  align-items: flex-start;
+}
+
+.message-user {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+}
+
+.message-user .user-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message-user .user-image img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.message-user .user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.message-user .user-info p {
+  margin: 0;
+}
+
+.message-user .user-info .user-name {
+  font-size: 20px;
+  font-weight: 550;
+}
+
+.message-user .user-info .user-email {
+  font-size: 18px;
+  font-weight: 500;
+  color: #65676d;
+}
+
+.dashboard-tasks {
+  height: 310px;
+  width: 500px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.dashboard-tasks ul {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  list-style-type: decimal-leading-zero;
+  list-style-position: inside;
+}
+
+.dashboard-tasks ul li {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.dashboard-tasks ul li .task-title,
+.dashboard-tasks ul li .task-stage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.dashboard-tasks ul li .task-title {
+  color: #65676d;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.dashboard-tasks ul li .task-title p {
+  margin: 0;
+}
+
+.dashboard-tasks ul li .task-title .completed {
+  text-decoration: line-through;
+}
+
+.task-stage i {
+  font-size: 24px;
+}
+
+.task-stage i.grey {
+  color: #6c757d;
+}
+
+.task-stage i.orange {
+  color: #f48c06;
+}
+
+.task-stage i.green {
+  color: #7ae582;
+}
+
+.tasks-message {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #d90429;
+}
+
+@media (width <= 1880px) {
+  .dashboard-row {
+    gap: 40px;
+  }
+}
+
+@media (width <= 1775px) {
+  .dashboard-row {
+    gap: 30px;
+  }
+}
+
+@media (width <= 1730px) {
+  .calendar-container {
+    width: 450px;
+  }
+
+  .message-users {
+    column-gap: 30px;
+  }
+}
+
+@media (width <= 1585px) {
+  .dashboard-tasks {
+    width: 420px;
+  }
+
+  .dashboard-tasks ul {
+    width: 350px;
+    padding: 0;
+  }
+
+  .dashboard-tasks ul li {
+    width: 350px;
+  }
+
+  .calendar-container {
+    width: 400px;
+  }
+
+  .message-user .user-info .user-name {
+    font-size: 18px;
+  }
+
+  .message-user .user-info .user-email {
+    font-size: 16px;
+  }
+}
+
+@media (width <= 1500px) {
+  .message {
+    padding: 15px;
+  }
+
+  .dashboard-row {
+    align-items: center;
+  }
+
+  .dashboard-row:nth-child(2) {
+    gap: 60px;
+  }
+
+  .calendar-container {
+    width: 500px;
+  }
+
+  .message-user .user-info .user-name {
+    font-size: 20px;
+  }
+
+  .message-user .user-info .user-email {
+    font-size: 18px;
+  }
+
+  .dashboard-tasks {
+    width: 470px;
+  }
+
+  .dashboard-tasks ul {
+    width: 400px;
+    padding: 0;
+  }
+
+  .dashboard-tasks ul li {
+    width: 400px;
+  }
+}
+
+@media (width <= 1375px) {
+  .calendar-container {
+    width: 400px;
+  }
+
+  .dashboard-row:nth-child(2) {
+    gap: 30px;
+  }
+}
+
+@media (width <= 1300px) {
+  .message-users {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 15px;
+  }
+
+  .dashboard-tasks {
+    width: 420px;
+  }
+
+  .dashboard-tasks ul {
+    width: 350px;
+    padding: 0;
+  }
+
+  .dashboard-tasks ul li {
+    width: 350px;
+  }
+}
+
+@media (width <= 1175px) {
+  .dashboard-tasks {
+    width: 380px;
+  }
+
+  .dashboard-tasks ul {
+    width: 310px;
+    padding: 0;
+  }
+
+  .dashboard-tasks ul li {
+    width: 310px;
+  }
+
+  .pie-chart-container canvas {
+    width: 170px !important;
+    height: 170px !important;
+  }
+
+  .pie-chart-container p {
+    font-size: 20px;
+  }
+
+  .team {
+    margin-left: 0;
+  }
+}
+
+@media (width <= 1100px) {
+  .dashboard-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .dashboard {
+    overflow-y: scroll;
+    gap: 40px;
+  }
+
+  .calendar-container {
+    width: 550px;
+    height: max-content;
+  }
+
+  .message-user .user-info .user-name {
+    font-size: 20px;
+  }
+
+  .message-user .user-info .user-email {
+    font-size: 18px;
+  }
+
+  .dashboard-tasks {
+    width: 470px;
+  }
+
+  .dashboard-tasks ul {
+    width: 400px;
+    padding: 0;
+  }
+
+  .dashboard-tasks ul li {
+    width: 400px;
+  }
+
+  .calendar-week-day {
+    font-size: 20px;
+  }
+
+  .calendar-day {
+    font-size: 20px;
+  }
+
+  .calendar-month-year-container select {
+    font-size: 20px;
+  }
+
+  .calendar-month-year {
+    font-size: 20px;
+  }
+
+  .calendar-left-arrow,
+  .calendar-right-arrow {
+    font-size: 20px;
+  }
+
+  .calendar-today-button {
+    font-size: 20px;
+  }
+
+  .calendar-months,
+  .calendar-years {
+    font-size: 20px;
+  }
+
+  .message-users {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .teams {
+    height: max-content;
+  }
+
+  .team {
+    margin-left: 20px;
+    font-size: 22px;
+  }
+
+  .teams-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+  }
+
+  .pie-chart-container canvas {
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  .pie-chart-container p {
+    font-size: 22px;
+  }
+
+  .dashboard-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .dashboard-tasks {
+    width: 550px;
+  }
+
+  .dashboard-tasks ul {
+    width: 480px;
+  }
+
+  .dashboard-tasks ul li {
+    width: 480px;
+  }
+}
+
+@media (width <= 935px) {
+  .teams-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+@media (width <= 835px) {
+  .message {
+    height: max-content;
+    padding: 30px;
+  }
+
+  .message-users {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width <= 725px) {
+  .calendar-container {
+    width: 450px;
+    padding: 30px 15px;
+  }
+
+  .calendar-week-day {
+    font-size: 18px;
+  }
+
+  .calendar-day {
+    font-size: 18px;
+  }
+
+  .calendar-month-year-container select {
+    font-size: 18px;
+  }
+
+  .calendar-month-year {
+    font-size: 18px;
+  }
+
+  .calendar-left-arrow,
+  .calendar-right-arrow {
+    font-size: 18px;
+  }
+
+  .calendar-today-button {
+    font-size: 18px;
+  }
+
+  .calendar-months,
+  .calendar-years {
+    font-size: 18px;
+  }
+
+  .dashboard-tasks {
+    width: 450px;
+  }
+
+  .dashboard-tasks ul {
+    width: 380px;
+  }
+
+  .dashboard-tasks ul li {
+    width: 380px;
+  }
+
+  .dashboard-group {
+    flex-direction: column;
+  }
+}
+
+@media (width <= 670px) {
+  .message {
+    padding: 30px 15px;
+  }
+
+  .message-user .user-info .user-name {
+    font-size: 18px;
+  }
+
+  .message-user .user-info .user-email {
+    font-size: 16px;
+  }
+}
+
+@media (width <= 610px) {
+  .message {
+    width: 100%;
+  }
+
+  .message-users {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .calendar-container {
+    width: 350px;
+  }
+
+  .calendar-week-day {
+    font-size: 16px;
+  }
+
+  .calendar-day {
+    font-size: 16px;
+  }
+
+  .calendar-month-year-container select {
+    font-size: 16px;
+  }
+
+  .calendar-month-year {
+    font-size: 16px;
+  }
+
+  .calendar-left-arrow,
+  .calendar-right-arrow {
+    font-size: 16px;
+  }
+
+  .calendar-today-button {
+    font-size: 16px;
+  }
+
+  .calendar-months,
+  .calendar-years {
+    font-size: 16px;
+  }
+
+  .dashboard-tasks {
+    width: 350px;
+  }
+
+  .dashboard-tasks ul {
+    width: 280px;
+  }
+
+  .dashboard-tasks ul li {
+    width: 280px;
+  }
+}
+
+@media (width <= 520px) {
+  .calendar-container {
+    width: 300px;
+  }
+
+  .calendar-actual-date {
+    flex-direction: column;
+  }
+
+  .dashboard-tasks {
+    width: 300px;
+  }
+
+  .dashboard-tasks ul {
+    width: 230px;
+  }
+
+  .dashboard-tasks ul li {
+    width: 230px;
+  }
+}
+
+@media (width <= 460px) {
+  .calendar-container {
+    width: 250px;
+  }
+
+  .dashboard-tasks {
+    width: 250px;
+  }
+
+  .dashboard-tasks ul {
+    width: 180px;
+  }
+
+  .dashboard-tasks ul li {
+    flex-direction: column;
+    width: 180px;
+  }
+
+  .teams {
+    padding: 30px;
+  }
+
+  .team {
+    margin-left: 0;
+    font-size: 20px;
+  }
+}
+
+@media (width <= 430px) {
+  .pie-chart-container p {
+    font-size: 20px;
+  }
+
+  .pie-chart-container canvas {
+    width: 170px !important;
+    height: 170px !important;
+  }
+}

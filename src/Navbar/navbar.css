@@ -1,0 +1,101 @@
+.navbar {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+.search {
+  width: 200px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.search-input {
+  font-size: 16px;
+  line-height: 1.2;
+  background: #efefe7;
+  border: 1px solid #d5d9db;
+  border-radius: 100px;
+  padding: 5px 15px;
+}
+
+input.search-input::placeholder {
+  color: #9b9b9b;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  cursor: pointer;
+}
+
+.notifications {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notifications button {
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.notifications button i {
+  font-size: 20px;
+  color: #65676d;
+}
+
+.user-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.user-profile button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.user-profile button img {
+  height: 40px;
+  border-radius: 50%;
+}
+
+@media (width <= 610px) {
+  .navbar {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .profile {
+    width: 100%;
+    justify-content: flex-end;
+    gap: 30px;
+  }
+
+  .search {
+    width: 100%;
+    margin-left: 0;
+    justify-content: center;
+  }
+}

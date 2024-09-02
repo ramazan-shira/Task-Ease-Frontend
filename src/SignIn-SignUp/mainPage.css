@@ -1,0 +1,464 @@
+.main-page {
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+  margin: 0;
+  background-image: url("https://img.freepik.com/premium-photo/abstract-background-design-images-wallpaper-ai-generated_643360-221160.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.user-form {
+  width: 100%;
+  height: 91vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  border-radius: 15px;
+}
+
+.sign-actions {
+  height: 100%;
+  background-color: #3bb397;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign {
+  height: 100%;
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.signin h1 {
+  color: white;
+}
+
+.signin p {
+  margin: 0;
+  color: white;
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.signin-btn {
+  height: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  padding: 15px 50px;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.sign-in,
+.sign-up {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 22px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.sign-in h1 {
+  color: #3bb397;
+  font-size: 82px;
+  margin-bottom: 30px;
+}
+
+.sign-in .form-input,
+.sign-up .form-input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  font-size: 22px;
+}
+
+.sign-in .form-input .form-group,
+.sign-up .form-input .form-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.sign-in .form-input .form-group .input-group,
+.sign-up .form-input .form-group .input-group {
+  width: 100%;
+  position: relative;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 780px;
+}
+
+.sign-up .form-input .form-group .input-group {
+  margin-left: 830px;
+}
+
+.input-group > input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 400px;
+  height: 100%;
+  border: 1px solid #e5e5e5;
+  outline: none;
+  background: #fff;
+  border-radius: 10px;
+  padding: 0 15px;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+::placeholder {
+  opacity: 0;
+}
+
+.input-group > label i {
+  font-size: 16px;
+}
+
+.input-group > label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translate(0, -50%);
+  font-size: 18px;
+  background: #fff;
+  padding: 0 12px;
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+  color: #006d77;
+}
+
+.input-group > input:focus + label,
+.input-group > input:not(:placeholder-shown) + label {
+  top: 0;
+  left: 5px;
+  font-size: 12px;
+  color: #006d77;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+
+.input-group > input:focus {
+  border-width: 2px;
+  border-color: #006d77;
+}
+
+.toggle-password {
+  margin-left: -430px;
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  color: #006d77;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.actions button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 50px;
+  font-weight: 600;
+  font-size: 22px;
+  text-transform: uppercase;
+  background-color: #3bb397;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  transition: 0.5s;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.error {
+  font-size: 16px;
+  color: red;
+}
+
+.success {
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #7be4a5;
+  color: white;
+  padding: 10px;
+}
+
+@media (width <= 1700px) {
+  .sign-in .form-input .form-group .input-group,
+  .sign-up .form-input .form-group .input-group {
+    margin-left: 670px;
+  }
+
+  .toggle-password {
+    margin-left: -300px;
+  }
+}
+
+@media (width <= 1620px) {
+  .sign-in .form-input .form-group .input-group,
+  .sign-up .form-input .form-group .input-group {
+    margin-left: 600px;
+  }
+
+  .toggle-password {
+    margin-left: -220px;
+  }
+}
+
+@media (width <= 1525px) {
+  .sign-in .form-input .form-group .input-group,
+  .sign-up .form-input .form-group .input-group {
+    margin-left: 500px;
+  }
+
+  .toggle-password {
+    margin-left: -150px;
+  }
+}
+
+@media (width <= 1475px) {
+  .toggle-password {
+    margin-left: -120px;
+  }
+}
+
+@media (width <= 1400px) {
+  .sign-in .form-input .form-group .input-group,
+  .sign-up .form-input .form-group .input-group {
+    margin-left: 400px;
+  }
+
+  .toggle-password {
+    margin-left: -80px;
+  }
+}
+
+@media (width <= 1300px) {
+  .toggle-password {
+    margin-left: -20px;
+  }
+
+  .signin h1 {
+    text-align: center;
+  }
+}
+
+@media (width <= 1200px) {
+  .sign-in .form-input .form-group .input-group,
+  .sign-up .form-input .form-group .input-group {
+    margin-left: 300px;
+  }
+
+  .toggle-password {
+    margin-left: 50px;
+  }
+}
+
+@media (width <= 1080px) {
+  .user-form {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sign-in {
+    margin-bottom: 20px;
+  }
+
+  .sign-actions {
+    width: 100%;
+    height: max-content;
+    box-sizing: border-box;
+    padding: 50px;
+  }
+
+  .signin {
+    padding: 0;
+  }
+
+  .sign-in .form-input .form-group .input-group,
+  .sign-up .form-input .form-group .input-group {
+    margin-left: 590px;
+  }
+
+  .toggle-password {
+    margin-left: -190px;
+  }
+}
+
+@media (width <= 1030px) {
+  .sign-in .form-input .form-group .input-group,
+  .sign-up .form-input .form-group .input-group {
+    margin-left: 500px;
+  }
+
+  .toggle-password {
+    margin-left: -130px;
+  }
+}
+
+@media (width <= 940px) {
+  .sign-in .form-input .form-group .input-group,
+  .sign-up .form-input .form-group .input-group {
+    margin-left: 400px;
+  }
+
+  .toggle-password {
+    margin-left: -90px;
+  }
+}
+
+@media (width <= 870px) {
+  .sign-in .form-input .form-group .input-group,
+  .sign-up .form-input .form-group .input-group {
+    margin-left: 300px;
+  }
+
+  .sign-in h1 {
+    font-size: 68px;
+  }
+
+  .toggle-password {
+    margin-left: 0px;
+  }
+}
+
+@media (width <= 785px) {
+  .sign-in .form-input .form-group .input-group,
+  .sign-up .form-input .form-group .input-group {
+    margin-left: 200px;
+  }
+
+  .toggle-password {
+    margin-left: 130px;
+  }
+}
+
+@media (width <= 660px) {
+  .sign-in .form-input .form-group .input-group,
+  .sign-up .form-input .form-group .input-group {
+    margin-left: 100px;
+  }
+
+  .input-group input {
+    width: 350px;
+  }
+
+  .toggle-password {
+    margin-left: 130px;
+  }
+}
+
+@media (width <= 565px) {
+  .sign-in .form-input .form-group .input-group,
+  .sign-up .form-input .form-group .input-group {
+    margin-left: 50px;
+  }
+
+  .input-group input {
+    width: 350px;
+  }
+
+  .signin h1 {
+    font-size: 42px;
+  }
+
+  .signin p {
+    font-size: 20px;
+  }
+}
+
+@media (width <= 565px) {
+  .input-group input {
+    width: 300px;
+  }
+}
+
+@media (width <= 484px) {
+  .sign-in .form-input .form-group .input-group,
+  .sign-up .form-input .form-group .input-group {
+    margin-left: 20px;
+  }
+
+  .signin h1 {
+    font-size: 36px;
+  }
+
+  .signin p {
+    font-size: 18px;
+  }
+
+  .toggle-password {
+    margin-left: 180px;
+  }
+}
+
+@media (width <= 445px) {
+  .input-group input {
+    width: 250px;
+  }
+}
+
+@media (width <= 400px) {
+  .input-group input {
+    width: 200px;
+  }
+
+  .signin h1 {
+    font-size: 32px;
+  }
+
+  .signin p {
+    font-size: 18px;
+  }
+
+  .toggle-password {
+    margin-left: 100px;
+  }
+}
