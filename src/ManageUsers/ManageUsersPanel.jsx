@@ -54,7 +54,7 @@ const ManageUsersPanel = (props) => {
   const confirmDelete = async () => {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/users/${userToDelete}`
+        `https://backend-production-faaa.up.railway.app/api/users/${userToDelete}`
       );
       if (response.data.type === "error") {
         setShowPopup(false);

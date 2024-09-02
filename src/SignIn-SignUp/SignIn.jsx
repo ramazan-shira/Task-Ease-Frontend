@@ -20,7 +20,7 @@ const SignIn = () => {
     const userToLogin = { email: emailL, password: passwordL };
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/users/login",
+        "https://backend-production-faaa.up.railway.app/api/users/login",
         userToLogin
       );
       if (response.data.type === "error") {

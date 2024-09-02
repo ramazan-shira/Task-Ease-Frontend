@@ -97,14 +97,17 @@ const SignUp = (props) => {
 
         const profileImage = imageResponse.request.responseURL;
 
-        const response = await axios.post("http://localhost:5000/api/users", {
-          image: profileImage,
-          name: name,
-          email: email,
-          phone: phone,
-          password: password,
-          role: 2,
-        });
+        const response = await axios.post(
+          "https://backend-production-faaa.up.railway.app/api/users",
+          {
+            image: profileImage,
+            name: name,
+            email: email,
+            phone: phone,
+            password: password,
+            role: 2,
+          }
+        );
 
         if (response.data?.type === "error") {
           toast.error("Something went wrong!", {

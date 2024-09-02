@@ -104,7 +104,7 @@ const Settings = () => {
         }
 
         const response = await axios.put(
-          `http://localhost:5000/api/users/profile/${loggedUser.id}`,
+          `https://backend-production-faaa.up.railway.app/api/users/profile/${loggedUser.id}`,
           savedProfile
         );
 

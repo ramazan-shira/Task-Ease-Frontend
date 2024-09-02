@@ -36,7 +36,9 @@ const Dashboard = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/users");
+      const response = await axios.get(
+        "https://backend-production-faaa.up.railway.app/api/users"
+      );
       dispatch(setUsers(response.data));
       setRefetch(false);
     } catch (error) {
@@ -46,7 +48,9 @@ const Dashboard = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/tasks");
+      const response = await axios.get(
+        "https://backend-production-faaa.up.railway.app/api/tasks"
+      );
       dispatch(setTasks(response.data));
       setRefetch(false);
     } catch (error) {

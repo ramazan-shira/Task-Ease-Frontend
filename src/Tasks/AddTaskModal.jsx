@@ -36,17 +36,20 @@ const AddTaskModal = (props) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:5000/api/tasks", {
-        title,
-        content,
-        team,
-        assignee,
-        dueDate,
-        stage,
-        priority,
-        createdAt: new Date(),
-        createdBy: loggedUser.id,
-      });
+      const response = await axios.post(
+        "https://backend-production-faaa.up.railway.app/api/tasks",
+        {
+          title,
+          content,
+          team,
+          assignee,
+          dueDate,
+          stage,
+          priority,
+          createdAt: new Date(),
+          createdBy: loggedUser.id,
+        }
+      );
 
       const addedTask = response.data;
 

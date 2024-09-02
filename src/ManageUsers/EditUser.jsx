@@ -119,7 +119,7 @@ const EditUser = (props) => {
       };
       try {
         const response = await axios.put(
-          `http://localhost:5000/api/users/${userToUpdate._id}`,
+          `https://backend-production-faaa.up.railway.app/api/users/${userToUpdate._id}`,
           updatedUser
         );
 

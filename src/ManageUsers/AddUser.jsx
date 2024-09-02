@@ -113,7 +113,7 @@ const AddUser = (props) => {
 
       try {
         const response = await axios.post(
-          "http://localhost:5000/api/users/addUser",
+          "https://backend-production-faaa.up.railway.app/api/users/addUser",
           newUser
         );
 
