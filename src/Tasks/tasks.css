@@ -613,7 +613,7 @@ select:focus {
 }
 
 .edit-task-text textarea {
-  width: 100%;
+  width: 90%;
   height: 200px;
   border: 1px solid #7c828d;
   border-radius: 10px;
