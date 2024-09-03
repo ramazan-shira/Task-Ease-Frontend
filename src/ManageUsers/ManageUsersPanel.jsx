@@ -125,7 +125,7 @@ const ManageUsersPanel = (props) => {
             </thead>
             <tbody>
               {filteredUsers.map((user) => (
-                <tr>
+                <tr key={user._id}>
                   <td data-label="ID">
                     {isSmallScreen ? `${user._id.slice(0, 6)}...` : user._id}
                   </td>
