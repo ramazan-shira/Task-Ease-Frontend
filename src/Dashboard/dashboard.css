@@ -816,6 +816,7 @@
   .dashboard-tasks ul li {
     flex-direction: column;
     width: 180px;
+    align-items: flex-start;
   }
 
   .teams {

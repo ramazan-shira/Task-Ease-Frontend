@@ -511,6 +511,7 @@ select:focus {
   justify-content: flex-start;
   align-items: center;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .edit-task-header {
@@ -1642,5 +1643,11 @@ li.red {
     flex-direction: column;
     gap: 10px;
     align-items: flex-start;
+  }
+}
+
+@media (width <= 430px) {
+  .comment-date p.commenter {
+    font-size: 18px;
   }
 }
