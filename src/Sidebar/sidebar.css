@@ -276,26 +276,3 @@
     height: 40px;
   }
 }
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  background-color: #fff;
-  box-sizing: border-box;
-  padding: 24px;
-  border-radius: 20px;
-  transition: width 0.3s, left 0.3s, z-index 0.3s;
-  z-index: 1000;
-}
-
-.sidebar.expanded {
-  width: 320px;
-  z-index: 1001;
-}
-
-.sidebar.collapsed {
-  width: 80px;
-  z-index: 1000;
-}

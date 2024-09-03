@@ -47,12 +47,6 @@
   }
 }
 
-@media (width <= 1500px) {
-  .app.container {
-    position: relative;
-  }
-}
-
 @media (width <= 450px) {
   .app.container {
     padding: 20px 15px;

@@ -510,6 +510,7 @@ select:focus {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  overflow-y: auto;
 }
 
 .edit-task-header {
@@ -583,18 +584,18 @@ select:focus {
 .edit-task-content {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   justify-content: center;
   align-items: flex-start;
   box-sizing: border-box;
-  overflow-y: scroll;
 }
 
 .edit-task-details {
-  width: 525px;
+  width: 100%;
   height: 100%;
   border-right: 1px solid #7c828d;
   padding: 30px;
+  box-sizing: border-box;
 }
 
 .edit-task-title {
@@ -611,10 +612,11 @@ select:focus {
 }
 
 .edit-task-text textarea {
-  width: 450px;
+  width: 100%;
   height: 200px;
-  border: none;
-  font-size: 22px;
+  border: 1px solid #7c828d;
+  border-radius: 10px;
+  font-size: 26px;
   font-weight: 500;
   resize: none;
 }
@@ -655,7 +657,7 @@ select:focus {
 .select-dropdown select {
   font-size: 20px;
   font-weight: normal;
-  max-width: 100%;
+  width: max-content;
   padding: 8px 24px 8px 10px;
   border: none;
   background-color: transparent;
@@ -669,6 +671,12 @@ select:focus {
   outline: none;
   box-shadow: none;
 }
+
+.select-dropdown select option {
+  font-size: 14px;
+  width: max-content;
+}
+
 .select-dropdown:after {
   content: "";
   position: absolute;
@@ -768,7 +776,7 @@ li.red {
 }
 
 .edit-task-comments {
-  width: 525px;
+  width: 100%;
   height: 100%;
   border-right: 1px solid #7c828d;
   box-sizing: border-box;
@@ -779,7 +787,7 @@ li.red {
 }
 
 .edit-task-comments .task-comments {
-  width: 525px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -805,6 +813,7 @@ li.red {
 }
 
 .add-comment .form-input {
+  width: 100%;
   background: none;
   border: none;
   padding: 12px 20px;
@@ -1379,6 +1388,17 @@ li.red {
   color: var(--gray);
 }
 
+@media (width <= 1230px) {
+  .edit-task-content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .edit-task-details,
+  .edit-task-comments .task-comments {
+    padding: 15px;
+  }
+}
+
 @media (width<= 1100px) {
   .tasks-container {
     display: flex;
@@ -1393,6 +1413,54 @@ li.red {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+  }
+}
+
+@media (width <= 1080px) {
+  .edit-task-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .edit-task-details {
+    border-right: none;
+    border-bottom: 1px solid #7c828d;
+  }
+
+  .edit-task-assignees {
+    margin-bottom: 0;
+  }
+
+  .edit-task-attributes {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .edit-task-team,
+  .edit-task-priority,
+  .edit-task-due-date {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .edit-task-team p,
+  .edit-task-priority p,
+  .edit-task-due-date p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  .edit-task-due-date {
+    margin-bottom: 30px;
   }
 }
 
@@ -1518,6 +1586,18 @@ li.red {
   }
 }
 
+@media (width <= 680px) {
+  .edit-task-title input {
+    width: 400px;
+  }
+}
+
+@media (width <= 600px) {
+  .edit-task-title input {
+    width: 350px;
+  }
+}
+
 @media (width <= 570px) {
   .my-tasks-navbar {
     align-items: center;
@@ -1530,5 +1610,37 @@ li.red {
 
   .task-title {
     width: 50%;
+  }
+}
+
+@media (width <= 540px) {
+  .edit-task-header {
+    padding: 15px;
+  }
+
+  .edit-task-title input {
+    width: 300px;
+  }
+
+  .comment-text .comment-content .comment-date {
+    flex-direction: column;
+    gap: 0;
+    align-items: flex-start;
+  }
+}
+
+@media (width <= 490px) {
+  .edit-task-title input {
+    width: 250px;
+  }
+
+  .edit-task-status,
+  .edit-task-assignees,
+  .edit-task-team,
+  .edit-task-priority,
+  .edit-task-due-date {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
   }
 }

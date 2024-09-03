@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import dayjs from "dayjs";
@@ -41,6 +41,18 @@ const EditTask = () => {
 
   const [openCommentMenuIndex, setOpenCommentMenuIndex] = useState(null);
   const [editedCommentText, setEditedCommentText] = useState("");
+
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 1080);
+  const [actions, setActions] = useState(window.innerWidth <= 630);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 1080);
+      setActions(window.innerWidth <= 630);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const toggleCommentActionsMenu = (index) => {
     setOpenCommentMenuIndex(openCommentMenuIndex === index ? null : index);
@@ -257,74 +269,86 @@ const EditTask = () => {
         <div className="return" onClick={returnBack}>
           <i className="fa-solid fa-angle-left"></i>
         </div>
-        <div className="edit-task-attributes">
-          <div className="edit-task-team">
-            <div className="select-dropdown">
-              <select value={team} onChange={(e) => setTeam(e.target.value)}>
-                <option value="development">Development</option>
-                <option value="marketing">Marketing</option>
-                <option value="human-resources">Human Resources</option>
-                <option value="retails">Retails</option>
-              </select>
+        {!isSmallScreen && (
+          <div className="edit-task-attributes">
+            <div className="edit-task-team">
+              <div className="select-dropdown">
+                <select value={team} onChange={(e) => setTeam(e.target.value)}>
+                  <option value="development">Development</option>
+                  <option value="marketing">Marketing</option>
+                  <option value="accounting">Accounting</option>
+                  <option value="human-resources">Human Resources</option>
+                  <option value="retails">Retails</option>
+                </select>
+              </div>
             </div>
-          </div>
-          <div className="edit-task-priority">
-            <div
-              className={`select-display ${getPriorityStyle(priority)}`}
-              onClick={() => setIsSelectOpen(!isSelectOpen)}
-            >
-              <span>&#9873;</span>
-            </div>
-
-            {isSelectOpen && (
-              <ul className="select-options">
-                <li
-                  onClick={() => handleOptionClick("no priority")}
-                  className="grey"
-                >
-                  <span>&#9873;</span> No Priority
-                </li>
-                <li
-                  onClick={() => handleOptionClick("medium")}
-                  className="blue"
-                >
-                  <span>&#9873;</span> Medium
-                </li>
-                <li onClick={() => handleOptionClick("high")} className="red">
-                  <span>&#9873;</span> High
-                </li>
-              </ul>
-            )}
-          </div>
-          <div className="edit-task-due-date">
-            {isEditing ? (
-              <input
-                id="dueDate"
-                type="date"
-                value={dayjs(dueDate).format("YYYY-MM-DD")}
-                onChange={handleDateChange}
-                onBlur={() => setIsEditing(false)}
-                autoFocus
-                className={isEditing ? "input" : "date"}
-                min={new Date().toISOString().split("T")[0]}
-              />
-            ) : (
-              <span
-                onClick={() => setIsEditing(true)}
-                style={{ cursor: "pointer" }}
+            <div className="edit-task-priority">
+              <div
+                className={`select-display ${getPriorityStyle(priority)}`}
+                onClick={() => setIsSelectOpen(!isSelectOpen)}
               >
-                {formattedDate}
-              </span>
-            )}
+                <span>&#9873;</span>
+              </div>
+
+              {isSelectOpen && (
+                <ul className="select-options">
+                  <li onClick={() => handleOptionClick("low")} className="grey">
+                    <span>&#9873;</span> Low
+                  </li>
+                  <li
+                    onClick={() => handleOptionClick("medium")}
+                    className="blue"
+                  >
+                    <span>&#9873;</span> Medium
+                  </li>
+                  <li onClick={() => handleOptionClick("high")} className="red">
+                    <span>&#9873;</span> High
+                  </li>
+                </ul>
+              )}
+            </div>
+            <div className="edit-task-due-date">
+              {isEditing ? (
+                <input
+                  id="dueDate"
+                  type="date"
+                  value={dayjs(dueDate).format("YYYY-MM-DD")}
+                  onChange={handleDateChange}
+                  onBlur={() => setIsEditing(false)}
+                  autoFocus
+                  className={isEditing ? "input" : "date"}
+                  min={new Date().toISOString().split("T")[0]}
+                />
+              ) : (
+                <span
+                  onClick={() => setIsEditing(true)}
+                  style={{ cursor: "pointer" }}
+                >
+                  {formattedDate}
+                </span>
+              )}
+            </div>
           </div>
-        </div>
+        )}
         <div className="edit-task-actions">
-          <button className="save-changes" onClick={saveUpdate}>
-            Save changes
-          </button>
-          <button className="delete" onClick={deleteTask}>
-            Delete Task
-          </button>
+          {actions ? (
+            <button className="save-changes" onClick={saveUpdate}>
+              <i className="fa-solid fa-floppy-disk"></i>
+            </button>
+          ) : (
+            <button className="save-changes" onClick={saveUpdate}>
+              Save changes
+            </button>
+          )}
+          {actions ? (
+            <button className="delete" onClick={deleteTask}>
+              <i className="fa-solid fa-trash"></i>
+            </button>
+          ) : (
+            <button className="delete" onClick={deleteTask}>
+              Delete Task
+            </button>
+          )}
         </div>
       </div>
 
@@ -401,6 +425,66 @@ const EditTask = () => {
                 )}
               </div>
             </div>
+            {isSmallScreen && (
+              <div className="edit-task-attributes">
+                <div className="edit-task-team">
+                  <p>
+                    <i className="fa-solid fa-people-line"></i> Team
+                  </p>
+                  <div className="select-dropdown">
+                    <select
+                      value={team}
+                      onChange={(e) => setTeam(e.target.value)}
+                    >
+                      <option value="development">Development</option>
+                      <option value="marketing">Marketing</option>
+                      <option value="accounting">Accounting</option>
+                      <option value="human-resources">Human Resources</option>
+                      <option value="retails">Retails</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="edit-task-priority">
+                  <p>
+                    <i className="fa-solid fa-arrow-up-1-9"></i> Priority
+                  </p>
+                  <div className="select-dropdown">
+                    <select
+                      value={priority}
+                      onChange={(e) => setPriority(e.target.value)}
+                    >
+                      <option value="low">Low</option>
+                      <option value="medium">Medium</option>
+                      <option value="high">High</option>
+                    </select>
+                  </div>
+                </div>
+                <div className="edit-task-due-date">
+                  <p>
+                    <i className="fa-regular fa-calendar-check"></i> Due Date
+                  </p>
+                  {isEditing ? (
+                    <input
+                      id="dueDate"
+                      type="date"
+                      value={dayjs(dueDate).format("YYYY-MM-DD")}
+                      onChange={handleDateChange}
+                      onBlur={() => setIsEditing(false)}
+                      autoFocus
+                      className={isEditing ? "input" : "date"}
+                      min={new Date().toISOString().split("T")[0]}
+                    />
+                  ) : (
+                    <span
+                      onClick={() => setIsEditing(true)}
+                      style={{ cursor: "pointer" }}
+                    >
+                      {formattedDate}
+                    </span>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
           <div className="edit-task-text">
             <textarea

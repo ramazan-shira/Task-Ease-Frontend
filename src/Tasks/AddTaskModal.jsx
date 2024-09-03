@@ -133,6 +133,7 @@ const AddTaskModal = (props) => {
                 </option>
                 <option value="development">Development</option>
                 <option value="marketing">Marketing</option>
+                <option value="accounting">Accounting</option>
                 <option value="human-resources">Human Resources</option>
                 <option value="retails">Retails</option>
               </select>
@@ -176,7 +177,7 @@ const AddTaskModal = (props) => {
                 value={priority}
                 onChange={(e) => setPriority(e.target.value)}
               >
-                <option value="noPriority">No Priority</option>
+                <option value="low">Low</option>
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
               </select>
